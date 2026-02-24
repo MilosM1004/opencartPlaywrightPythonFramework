@@ -142,7 +142,7 @@ def page(request, browser_context):
 
     # Create and navigate to base URL
     page = browser_context.new_page()
-    page.goto(base_url)
+    page.goto(base_url, wait_until="domcontentloaded", timeout=60000)
 
     # Yield the page to the test
     yield page
